@@ -19,13 +19,14 @@ public class BaseController {
 	private static int counter = 0;
 	private static final String VIEW_INDEX = "index";
 	private final static org.slf4j.Logger logger = LoggerFactory.getLogger(BaseController.class);
+	
+	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	Date date = new Date();
+	System.out.println(dateFormat.format(date)); //2016/11/16 12:08:43
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(ModelMap model) {
 		
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date date = new Date();
-		System.out.println(dateFormat.format(date)); //2016/11/16 12:08:43
 
 		model.addAttribute("message", "Welcome - " + dateFormat.format(date));
 		model.addAttribute("counter", ++counter);
