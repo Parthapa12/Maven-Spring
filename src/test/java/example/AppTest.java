@@ -1,12 +1,14 @@
 package example;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import com.qaagility.controller.Calculator;
  
 
-public class AppTest 
-	extends TestCase
+public class AppTest extends TestCase
+
+Calculator myCalc = new Calculator();
+
 {
       public void testSlow() {
         System.out.println("slow");
@@ -19,4 +21,10 @@ public class AppTest
       public void testFast() {
         System.out.println("fast");
       }
+	
+	@Test	
+      public void testCalc() {
+        assertEquals("Result", 9, myCalc.add());
+      }
+	
     }
