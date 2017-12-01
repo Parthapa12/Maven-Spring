@@ -5,11 +5,10 @@ import static org.junit.Assert.assertEquals;
 import com.qaagility.controller.Calculator;
  
 
-public class AppTest extends TestCase
+public class AppTest extends TestCase {
 
 Calculator myCalc = new Calculator();
 
-{
       public void testSlow() {
         System.out.println("slow");
       }
